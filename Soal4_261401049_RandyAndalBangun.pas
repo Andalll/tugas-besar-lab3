@@ -1,23 +1,18 @@
-{
-  [SOAL 4] Kalkulator Sederhana dengan Case-Of dan Repeat-Until
-  Menu: 1: Penjumlahan, 2: Pengurangan, 3: Perkalian,
-        4: Pembagian Real, 5: DIV & MOD
-  Setelah tiap perhitungan, tanya "Apakah ingin melakukan
-  perhitungan lagi? (Y/T)" — berhenti jika jawab 'T' atau 't'.
-}
 program KalkulatorSederhana;
+uses crt;
 
 var
-  pilihan : integer;
-  a, b    : real;      { dua angka operand }
-  hasil   : real;
-  lagi    : char;
+  pilihan : integer; // Variabel untuk menyimpan pilihan operasi
+  a, b    : real; // Dua angka operand yang akan diolah
+  hasil   : real; // Variabel untuk menyimpan hasil perhitungan
+  lagi    : char; // Variabel untuk mengulang perhitungan
 
 begin
+  clrscr;
   repeat
-    { Tampilkan menu pilihan operasi }
+    // Tampilkan menu pilihan operasi
     writeln;
-    writeln('=== KALKULATOR SEDERHANA ===');
+    writeln('KALKULATOR SEDERHANA');
     writeln('1. Penjumlahan');
     writeln('2. Pengurangan');
     writeln('3. Perkalian');
@@ -26,49 +21,46 @@ begin
     write('Pilih operasi (1-5): ');
     readln(pilihan);
 
-    { Minta dua angka operand }
-    write('Masukkan angka pertama : ');
+    write('Masukkan angka pertama : '); // Meminta input angka pertama
     readln(a);
-    write('Masukkan angka kedua   : ');
+    write('Masukkan angka kedua   : '); // Meminta input angka kedua
     readln(b);
 
-    { Hitung dan tampilkan hasil sesuai pilihan }
-    case pilihan of
+    case pilihan of // Menentukan operasi yang akan dijalankan
       1: begin
-           hasil := a + b;
+           hasil := a + b; // Menjumlahkan dua angka
            writeln('Hasil: ', a:0:2, ' + ', b:0:2, ' = ', hasil:0:2);
          end;
       2: begin
-           hasil := a - b;
+           hasil := a - b; // Mengurangi angka pertama dengan angka kedua
            writeln('Hasil: ', a:0:2, ' - ', b:0:2, ' = ', hasil:0:2);
          end;
       3: begin
-           hasil := a * b;
+           hasil := a * b; // Mengalikan dua angka
            writeln('Hasil: ', a:0:2, ' x ', b:0:2, ' = ', hasil:0:2);
          end;
       4: begin
-           if b = 0 then
+           if b = 0 then // Mencegah pembagian dengan nol
              writeln('Error: pembagian dengan nol tidak diperbolehkan!')
            else
            begin
-             hasil := a / b;
+             hasil := a / b; // Membagi angka pertama dengan angka kedua
              writeln('Hasil: ', a:0:2, ' / ', b:0:2, ' = ', hasil:0:2);
            end;
          end;
       5: begin
-           if trunc(b) = 0 then
+           if trunc(b) = 0 then // Mencegah pembagi nol pada operasi div/mod
              writeln('Error: pembagi nol tidak diperbolehkan!')
            else
              writeln('Hasil: ', trunc(a), ' div ', trunc(b), ' = ', trunc(a) div trunc(b),
                      ' , ', trunc(a), ' mod ', trunc(b), ' = ', trunc(a) mod trunc(b));
          end;
     else
-      writeln('Pilihan tidak valid!');
+      writeln('Pilihan tidak valid!'); // Jika pilihan di luar 1-5
     end;
 
-    { Tanya apakah ingin menghitung lagi }
     writeln;
-    write('Apakah ingin melakukan perhitungan lagi? (Y/T): ');
+    write('Apakah ingin melakukan perhitungan lagi? (Y/T): '); // Menanyakan apakah user ingin mengulang
     readln(lagi);
 
   until (lagi = 'T') or (lagi = 't');
