@@ -15,7 +15,7 @@ begin
   writeln;
 
   // Menerima jumlah barang yang dibeli 
-  write('Masukkan jumlah barang (N): ');
+  write('Masukkan jumlah barang: ');
   readln(N);
 
   // Input harga barang ke-1 sampai  ke-N sesuai dengan input menggunakan for

@@ -5,7 +5,7 @@ var
 
 begin
   clrscr;
-  write('Masukkan nilai N: '); // Meminta input batas akhir deret
+  write('Masukkan angka: '); // Meminta input batas akhir deret
   readln(N);
   write('Pilih kategori deret (1: Ganjil, 2: Genap): '); // Meminta pilihan kategori
   readln(kategori);

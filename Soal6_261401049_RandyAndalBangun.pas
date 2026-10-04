@@ -13,13 +13,13 @@ var
 begin
   clrscr;
   // Mengambil input
-  write('Masukkan Nilai Tugas (0-100) : ');
+  write('Masukkan Nilai Tugas: ');
   readln(tugas);
-  write('Masukkan Nilai UTS (0-100)   : ');
+  write('Masukkan Nilai UTS: ');
   readln(uts);
-  write('Masukkan Nilai UAS (0-100)   : ');
+  write('Masukkan Nilai UAS: ');
   readln(uas);
-  write('Masukkan Kehadiran (%)       : ');
+  write('Masukkan Kehadiran (%): ');
   readln(kehadiran);
 
   akhir := tugas * BOBOT_TUGAS + uts * BOBOT_UTS + uas * BOBOT_UAS; // Menghitung nilai akhir dengan bobot 

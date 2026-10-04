@@ -1,5 +1,5 @@
 program SistemLogin;
-
+uses crt;
 const // Membuat konstanta untuk sandi dan batas percobaan
   KATA_SANDI = 'pascal123'; // Kata sandi rahasia internal
   MAX_COBA   = 3; // Batas maksimal percobaan login
@@ -10,10 +10,9 @@ var
   berhasil   : boolean; // Variabel penanda apakah login berhasil
 
 begin
+  clrscr;
   percobaan := 0; // Inisialisasi jumlah percobaan
   berhasil  := false; // Status login awalnya gagal
-
-  writeln('=== SISTEM LOGIN ===');
 
   repeat
     percobaan := percobaan + 1; // Menambah jumlah percobaan setiap kali user mencoba

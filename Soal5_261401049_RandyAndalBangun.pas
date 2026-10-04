@@ -12,9 +12,9 @@ var
 
 begin
   clrscr;
-  write('Masukkan jumlah mahasiswa (M): ');
+  write('Masukkan jumlah mahasiswa: ');
   readln(M);
-  write('Masukkan jumlah tugas (N): ');
+  write('Masukkan jumlah tugas: ');
   readln(N);
   writeln;
 
